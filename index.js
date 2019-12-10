@@ -1,6 +1,14 @@
 function fetchBooks() {
-
+  return fetch('https://anapioficeandfire.com/api/books', {mode: 'no-cors'})
+  .then(response => {
+    response.json()
+  })
+  .then(json => {
+    debugger
+    renderBooks(json)
+  })
 }
+
 
 function renderBooks(json) {
   const main = document.querySelector('main')
